@@ -5,6 +5,7 @@ const methodOverride = require("method-override");
 const cors = require("cors");
 const serverPort = process.env.PORT || 3568;
 const app = express();
+const route = express.Router();
 //Settings
 app.set("port", serverPort);
 // Middlewares
@@ -25,6 +26,12 @@ app.use((req, res, next) => {
 });
 
 //rutas
+// mensaje de bienvenida
+app.get("/", (req, res) => { 
+  res.send({ message: "Welcome to the itacate's app & web api." });
+}
+);
+
 // Login de usuarios
 app.use(require("./src/routes/acceso"));
 
