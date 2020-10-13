@@ -1,16 +1,16 @@
 const mysql = require('mysql');
 
 // Conexion local
-const server = "127.0.0.1";
+const server = "localhost";
 const user = "root";
 const password = "Penca.1234";
 const db = "itacate";
 
 // Conexion Remota
-// const server;
-// const user;
-// const password;
-// const db;
+// const server = 'db5000972804.hosting-data.io';
+// const user = 'dbu618955';
+// const password = "Pencadev.12345abc";
+// const db = 'dbs846067';
 
 const connectToDb = mysql.createConnection({
     host: server,
