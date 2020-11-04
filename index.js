@@ -45,6 +45,12 @@ app.use(require("./src/routes/direccion"));
 // Productos
 app.use(require("./src/routes/productos"));
 
+// Pedidos 
+app.use(require("./src/routes/pedidos"));
+
+// Notificaciones
+app.use(require("./src/routes/notificaciones"));
+
 //Startng server
 app.listen(app.get("port"), () => {
   process.stdout.write(`Server is running on port: ${app.get("port")}`);
