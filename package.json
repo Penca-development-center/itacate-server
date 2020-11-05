@@ -4,7 +4,8 @@
   "description": "Servidor de la app de itacate",
   "main": "index.js",
   "scripts": {
-    "start": "node ."
+    "start": "node .",
+    "dev": "nodemon ."
   },
   "keywords": [
     "comida",
