@@ -28,9 +28,7 @@ app.use((req, res, next) => {
 //rutas
 // mensaje de bienvenida
 app.get("/", (req, res) => {
-  res.send({
-    message: "Welcome to the itacate's app & web api."
-  });
+  res.send("Welcome to the itacate's app & web api.");
 });
 
 // Login de usuarios
