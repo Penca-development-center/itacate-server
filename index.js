@@ -31,6 +31,10 @@ app.get("/", (req, res) => {
   res.send("Welcome to the itacate's app & web api.");
 });
 
+route.get("/", (req, res) => {
+  res.send("Welcome to the itacate's app & web api.");
+});
+
 // Login de usuarios
 app.use(require("./src/routes/acceso"));
 
