@@ -35,25 +35,25 @@ route.get("/", (req, res) => {
 });
 
 // Login de usuarios
-app.use(require("./src/routes/acceso"));
+app.use(require("./routes/acceso"));
 
 // Registro
-app.use(require("./src/routes/registro"));
+app.use(require("./routes/registro"));
 
 // Direccion del usuario}
-app.use(require("./src/routes/direccion"));
+app.use(require("./routes/direccion"));
 
 // Productos
-app.use(require("./src/routes/productos"));
+app.use(require("./routes/productos"));
 
 // Pedidos 
-app.use(require("./src/routes/pedidos"));
+app.use(require("./routes/pedidos"));
 
 // Notificaciones
-app.use(require("./src/routes/notificaciones"));
+app.use(require("./routes/notificaciones"));
 
 // Actualizaciones 
-app.use(require("./src/routes/actualizar"));
+app.use(require("./routes/actualizar"));
 
 //Startng server
 app.listen(app.get("port"), () => {
