@@ -17,7 +17,8 @@ route.post("/registro/verficar", (request, response) => {
             if (results.length > 0) {
                 response.send(results[0]);
             } else if (results.length === 0) {
-                response.send({ message: 'Se puede registrar' });
+                response.send({ message: 'Se puede registrar', code: 6});
+                // response.send(results);
             }
         }
     });
@@ -29,13 +30,14 @@ route.post("/registro", (request, response) => {
             const correo = request.body.registerInfo.email;
             const telefono = request.body.registerInfo.phoneNumber
             const pass = request.body.registerInfo.password;
-            const sql = `INSERT INTO usuarios VALUES (Null, '${nombre}', '${telefono}','${correo}','${pass}','cliente')`;
+        const sql = `INSERT INTO usuarios VALUES (Null, '${nombre}', Null,'${telefono}','${correo}','${pass}','cliente')`;
             connectToDb.query(sql, (errors, results, fields) => {
                 if (errors) {
                     console.log(errors);
-                    response.send(errors);
+                    response.send({ error: errors });
                 } else if (results) {
                     response.send(results);
+                    console.log(results);
                 }
             });
 });

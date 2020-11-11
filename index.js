@@ -14,8 +14,7 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(methodOverride());
 app.use(cors());
-
-// Cors
+// //Cors
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
@@ -52,6 +51,9 @@ app.use(require("./src/routes/pedidos"));
 
 // Notificaciones
 app.use(require("./src/routes/notificaciones"));
+
+// Actualizaciones 
+app.use(require("./src/routes/actualizar"));
 
 //Startng server
 app.listen(app.get("port"), () => {
