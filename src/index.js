@@ -11,7 +11,7 @@ app.set("port", serverPort);
 // Middlewares
 app.use(express.json());
 app.use(logger("dev"));
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 app.use(methodOverride());
 app.use(cors());
 // //Cors
