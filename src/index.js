@@ -3,11 +3,11 @@ const bodyParser = require("body-parser");
 const logger = require("morgan");
 const methodOverride = require("method-override");
 const cors = require("cors");
-const serverPort = process.env.PORT || 3568;
+const port = process.env.PORT || 3568;
 const app = express();
 const route = express.Router();
-//Settings
-app.set("port", serverPort);
+
+
 // Middlewares
 app.use(express.json());
 app.use(logger("dev"));
@@ -27,11 +27,8 @@ app.use((req, res, next) => {
 //rutas
 // mensaje de bienvenida
 app.get("/", (req, res) => {
-  res.send("Welcome to the itacate's app & web api.");
-});
-
-route.get("/", (req, res) => {
-  res.send("Welcome to the itacate's app & web api.");
+  res.sendStatus(200);
+  res.send("Welcome to the itacate's app & web api.");;
 });
 
 // Login de usuarios
@@ -56,6 +53,6 @@ app.use(require("./routes/notificaciones"));
 app.use(require("./routes/actualizar"));
 
 //Startng server
-app.listen(app.get("port"), () => {
-  process.stdout.write(`Server is running on port: ${app.get("port")}`);
+app.listen(port, () => {
+  process.stdout.write(`Server is running on port: ${port}`);
 });
